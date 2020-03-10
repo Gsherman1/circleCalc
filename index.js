@@ -17,13 +17,19 @@ app.post("/", function(req, res){
 
   var radCircle = parseFloat(req.body.n1);;
 
-// does the computation of the input variables, as numbers
-    var areaCircle = Math.PI * Math.pow(radCircle, 2);
-    var circumCircle = 2 * Math.PI * radCircle;
+//n1 the the number they input in html form turned into a var
 
+//formula for area of circle needed to find created into var
+    var volSphere = 4/3 * Math.PI * Math.pow(radCircle, 3);
+    var areaCircle = Math.PI * Math.pow(radCircle, 2);
+  //formula to find circ of circle with created into var
+    var circumCircle = 2 * Math.PI * radCircle;
 // sends the results back to the web page as string
-  res.send("The Area of the Cirle is " + areaCircle.toFixed(2) + " and the Circumference is " + circumCircle.toFixed(2));
+  res.send("The volume of the Sphere is " + volSphere.toFixed(2) + " and the Circumference is " + circumCircle.toFixed(0));
 })
+
+
+
 //this gets the response from the web page to this placeholder
 // COMMENT out this code in Repl, as this is not running on localhost:3000
 
