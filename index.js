@@ -16,18 +16,26 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res){
 
   var radCircle = parseFloat(req.body.n1);;
+  
+ var heightCyl = parseFloat(req.body.n2);;
 
-//n1 the the number they input in html form turned into a var
+ var radCyl = parseFloat
+ (req.body.n3);;
 
 //formula for area of circle needed to find created into var
+    var volCyl = Math.PI * Math.pow(radCyl, 2) * heightCyl;
+
     var volSphere = 4/3 * Math.PI * Math.pow(radCircle, 3);
     var areaCircle = Math.PI * Math.pow(radCircle, 2);
   //formula to find circ of circle with created into var
     var circumCircle = 2 * Math.PI * radCircle;
 // sends the results back to the web page as string
-  res.send("The volume of the Sphere is " + volSphere.toFixed(2) + " and the Circumference is " + circumCircle.toFixed(0));
-})
 
+ //res.send("The volume of the Sphere is " + volSphere.toFixed(2) + " and the Circumference is " + circumCircle.toFixed(0));
+
+
+res.send("The volume of the Cylinder is " + volCyl.toFixed(2));
+})
 
 
 //this gets the response from the web page to this placeholder
